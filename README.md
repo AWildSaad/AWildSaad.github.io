@@ -1,1 +1,1 @@
-Text Prediction using JavaScript and a lame HTML front end
+Text Prediction using JavaScript and an HTML front end
