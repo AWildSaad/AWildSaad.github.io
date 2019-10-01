@@ -1,4 +1,1 @@
-# AWildSaad.github.io
-
-
-I need to start making more of these
+Text Prediction using JavaScript and a lame HTML front end
