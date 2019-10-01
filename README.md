@@ -9,3 +9,8 @@ YOU ARE WELCOME TO LEAVE
 
 
 BUT YOU ARE NOT WELCOME
+
+
+hosted URL's
+
+/TextPrediction
