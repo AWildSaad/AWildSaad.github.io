@@ -1,36 +1,34 @@
-var tree = {    //Dictionaries!
+var tree = {                                    //Dictionaries because this is Python :P
     word: "",
-    included: false, //This is how we keep track of seeing if the node itself is included in the node
+    included: false,                            //This is how we keep track of seeing if the node itself is included in the node
 };
 
 function loadWord(word) {
     word = word.toLowerCase();
-    //create pointer to our root node
+                                                //create pointer to our root node
     var node = tree;
     for(var i = 0; i < word.length; i++){
         var ch = word[i];
         if (node[ch] === undefined) {
             var child = {
-                word: node.word + ch, //if the node doesnt exist, create a new node 
+                word: node.word + ch,           //if the node doesnt exist, create a new node 
             } 
-            node[ch] = child;
-            node = child;        
+            node[ch] = child;                   //add the next character to the new child node
+            node = child;                       //switch to that node  
         }
         else{
-            node = node[ch]
+            node = node[ch]                     //continue our traversal
         }
 
     }
-
-    //If the root is not in the tree, then include it in the tree.
+                                                //If the root is not in the tree, then include it in the tree.
     if(node !== tree){
         node.included = true;
     }
 }
 
 console.log(tree);
-
-const alphabet = "abcdefghijklmnopqrstuvwxyz"
+const alphabet = "abcdefghijklmnopqrstuvwxyz"    //setting up constants for our "language"
 function allWords(node, words){
     if (!words) { words = []}
     if (!node){ return }
@@ -54,6 +52,8 @@ function getNode(word){
     return node;
 }
 
+//all of the code below was debugging in the console in the web browser Chrome to see we are getting the output that we want
+
 function buildPredictions(){
     $("#predictions").html("");
     var entry = $("#entry").val().toLowerCase()
@@ -65,7 +65,7 @@ function buildPredictions(){
     } else {
         var predictions = allWords(node);
         console.log("Got " + predictions.length + " predictions")
-        //create a list element and put a word in it
+                                                    //create a list element and put a word in it
         for(var i = 0; i < predictions.length; i++) {
             var li = $("<li></li>").text(predictions[i]);
             $("#predictions").append(li)
@@ -73,7 +73,6 @@ function buildPredictions(){
     }
 }
 
-//all of this code was debugging in the JS console to see we are getting the output that we want
 $(document).ready(function() {
     console.log("We gucci hoochie")
     $("#entry").on("change keyup paste", function(){
@@ -81,14 +80,14 @@ $(document).ready(function() {
     })
     $.get("./words.txt", function(data, status){
         var words = data.split("\n");
-        var start = new Date().getTime(); //wanted to have some fun and see how long this giant list would take to load in JavaScript
+        var start = new Date().getTime();           //wanted to have some fun and see how long this giant list would take to load in JavaScript
         console.log("Got " + words.length + " words of type " + typeof(data) + " and status: ",  status)
         console.log()
         for (var i = 0; i < words.length; i++){
             loadWord(words[i]);
         }
         var end = new Date().getTime();
-        var time = end - start; //values ranged from 400-800 milliseconds
+        var time = end - start;                     //values ranged from 400-800 milliseconds
         console.log("Took " + time + " milliseconds to load" );
         $("#preload").hide();
         $("#stuff").show();
