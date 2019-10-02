@@ -1,3 +1,3 @@
-Projects Hosted oh GitHub:
+My projects Hosted on GitHub:
 
-[Text Prediction](https://awildsaad.github.io/TextPrediction/).
+[Text Prediction](https://awildsaad.github.io/TextPrediction/)
