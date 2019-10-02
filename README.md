@@ -1,16 +1,3 @@
-NOT WELCOME TO SAADS DOMAIN
+Projects Hosted oh GitHub:
 
-
-
-YOU ARE WELCOME TO STAY
-
-
-YOU ARE WELCOME TO LEAVE
-
-
-BUT YOU ARE NOT WELCOME
-
-
-hosted URL's
-
-/TextPrediction
+[Text Prediction](https://awildsaad.github.io/TextPrediction/).
